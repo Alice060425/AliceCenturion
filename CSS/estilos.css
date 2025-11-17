@@ -73,9 +73,13 @@ article{
 
     flex: 2;
     background-color: rgba(0, 0, 0, 0.5);
-    padding: 15px;
+    padding: 1em;
     border-radius: 8px;
     box-shadow: 0 2px 5px #022442;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: break-word ;
+
 }
 aside{
     flex: 1;
@@ -91,4 +95,10 @@ footer{
     color: white;
     border-radius: 8px;
     margin-top: 20px;
+}
+h3, p{
+font-size: 2vw;
+}
+h3{
+    font-size:clamp(1rem, 2.5vw, 2 rem)
 }
