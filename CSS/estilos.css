@@ -122,7 +122,7 @@ footer{
 
 .tabla th,
 .tabla td {
-  border: 3px double solid #ddd;
+  border: 1px solid #ddd;
   padding: 0.6rem;
   text-align: left;
 }
