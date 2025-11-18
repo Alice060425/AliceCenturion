@@ -72,10 +72,10 @@ section{
     text-shadow: 2px 2px 5px black ;
 }
 article{
-    background-color: rgba(18, 196, 231, 0.979);
+    background-color: rgba(228, 107, 107, 0.979);
     padding: 1em;
     border-radius: 8px;
-    box-shadow: 0 2px 5px #022442;
+    box-shadow: 0 2px 5px #3b6183;
     max-width: 100%;
     box-sizing: border-box;
 }
