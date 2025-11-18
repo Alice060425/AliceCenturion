@@ -26,7 +26,7 @@ header img{
     transition: display all;
 }
 nav {
-    background-color: #0055a5;
+    background-color: #b64f4f;
     padding: 10px;
     margin: 20px 0;
 }
@@ -90,7 +90,7 @@ aside{
 footer{
     text-align: center;
     padding: 15px;
-    background-color: #0055a5;
+    background-color:#b64f4f ;
     color: white;
     border-radius: 8px;
     margin-top: 20px;
