@@ -79,6 +79,10 @@ article{
     max-width: 100%;
     box-sizing: border-box;
 }
+article ul, ol, dl{
+    padding: 10px;
+    margin: 18px;
+}
 aside{
     flex: 1;
     background-color: #eef;
