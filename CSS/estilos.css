@@ -93,4 +93,12 @@ footer{
     border-radius: 8px;
     margin-top: 20px;
 }
-
+.ListaOrdenada{
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    text-shadow: 2px 2px 5px black ;
+}
