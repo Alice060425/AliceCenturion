@@ -35,6 +35,8 @@ nav ul{
     display: flex;
     justify-content: center;
     gap: 15px;
+    color: white;
+    text-align: center;
 }
 nav ul li a {
     color: rgb(245, 239, 239);
