@@ -22,29 +22,56 @@
              <li><a>ENTREGABLE</a></li>
            </ul> 
        </nav>
-       <main class="pane1">
-         <div class="btns">
-            <button data-action-="Subtitulo" data-tex="¡El cosmo arde dentro de ti, como Seiya elevamdo su fuerza!">
-                Cambiar subtitulo: Seiya
-            </button>
-            <button data-action-="Subtitulo" data-tex="¡Poder del hielo Absoluto! Hyoga protege a sus aliados.">
-                Cambiar subtitulo:Hyoga
-            </button>
-            <button data-action-="Subtitulo" data-tex="¡Shiryu domina el dragon: perseverancia y honor en cada batalla.">
-                Cambiar subtitulo:shiryu
-            </button>
-            <button data-action-="Subtitulo" data-tex="Ikki del Fenix renace mas fuerte cada vez que cae. ">
-                Cambiar subtitulo: Ikki
-            </button>
-            <button data-action-="mensaje" data-tex="¡Saori/Athena confia en ti ! Manten la calma y eleva tu cosmo">
-                Mostrar mensaje: Athena
-            </button>
-            <button data-action-="mensaje" data-tex="¡Caballeros unidos jamas seran vencidos!">
-                Mostrar menssaje:seya
-            </button>
-         </div>
+       <main class="panel">
+    <div class="btns">
+      <!-- Botones que cambian texto, imagen y estilo -->
+      <button 
+        data-action="caballero" 
+        data-text="Seiya: El caballero de Pegaso, siempre luchando con valor." 
+        data-img="seiya.jpg" 
+        data-color="gold" 
+        data-fondo="darkblue" 
+        data-tamano="1.2em">
+        Mostrar Seiya
+      </button>
 
-       </main>
+      <button 
+        data-action="caballero" 
+        data-text="Shiryu: El Dragón, símbolo de perseverancia y honor." 
+        data-img="shiryu.jpg" 
+        data-color="lightgreen" 
+        data-fondo="darkslategray" 
+        data-tamano="1.1em">
+        Mostrar Shiryu
+      </button>
+
+      <button 
+        data-action="caballero" 
+        data-text="Ikki: El Fénix, renace más fuerte cada vez que cae." 
+        data-img="ikki.jpg" 
+        data-color="red" 
+        data-fondo="black" 
+        data-tamano="1.3em">
+        Mostrar Ikki
+      </button>
+
+      <button 
+        data-action="caballero" 
+        data-text="Athena: Saori Kido, protectora de la paz y la justicia." 
+        data-img="athena.jpg" 
+        data-color="violet" 
+        data-fondo="white" 
+        data-tamano="1.2em">
+        Mostrar Athena
+      </button>
+    </div>
+
+    <section class="content">
+      <p class="label">Vista previa</p>
+      <div id="texto" class="box">Presiona un botón para ver cambios.</div>
+      <img id="imagenCaballero" src="seiya.jpg" alt="Caballero Seiya" class="caballero" />
+    </section>
+  </main>
        <footer>
            <a href="https://arnoldbgq.github.io/arnoldgonzalez/" target="_blank">Página del Instructor</a>
           <a href="https://github.com/arnoldbgq/arnoldgonzalez" target="_blank">Repositorio del Instructor</a>
