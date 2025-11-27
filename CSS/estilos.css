@@ -145,50 +145,37 @@ footer{
     padding: 0.5rem;
   }
 }
-.panel {
-  max-width: 900px;
-  margin: 0 auto;
-  background: rgba(0, 0, 0, 0.55);
-  border-radius: 12px;
-  padding: 20px;
+
+
+main {
+    padding: 20px;
 }
 
-.btns {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 12px;
-  margin: 16px 0;
+#botones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+
 
 button {
-  padding: 10px;
-  border: none;
-  border-radius: 8px;
-  background: #7b1f2f;
-  color: #fff;
-  cursor: pointer;
-  transition: 0.3s;
-}
-button:hover { background: #4a0f18; }
-
-.box {
-  background: rgba(0, 0, 0, 0.35);
-  border-radius: 8px;
-  padding: 12px;
-  min-height: 44px;
+    padding: 10px 20px;
+    margin: 5px;
+    border: none;
+    background-color: #5cb85c;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.caballero {
-  width: 220px;
-  border: 2px solid gold;
-  border-radius: 8px;
-  margin-top: 12px;
-  box-shadow: 0 0 12px rgba(255, 215, 0, 0.6);
+button:hover {
+    background-color: #449d44;
 }
 
-.extra {
-  margin-top: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 16px;
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #555; /* Gris más claro */
+    color: #fff;
 }

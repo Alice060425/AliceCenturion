@@ -22,27 +22,38 @@
              <li><a>ENTREGABLE</a></li>
            </ul> 
        </nav>
-       <main class="panel">
-    <div class="btns">
-      <button data-action="caballero" data-text="Seiya: El caballero de Pegaso." data-img="..images/seiya.jpg" data-color="gold" data-fondo="darkblue" data-tamano="1.2em">Mostrar Seiya</button>
-      <button data-action="caballero" data-text="Shiryu: El Dragón." data-img="..images/siryu.jpg" data-color="lightgreen" data-fondo="darkslategray" data-tamano="1.1em">Mostrar Shiryu</button>
-      <button data-action="caballero" data-text="Ikki: El Fénix." data-img="..images/ikki.jpg" data-color="red" data-fondo="black" data-tamano="1.3em">Mostrar Ikki</button>
-      <button data-action="caballero" data-text="Athena: Protectora de la paz." data-img="..images/athena.jpg" data-color="violet" data-fondo="white" data-tamano="1.2em">Mostrar Athena</button>
-      <button data-action="reset">Resetear estilos</button>
-      <button data-action="mensaje" data-text="¡El cosmos de todos los caballeros se une!">Mensaje especial</button>
-    </div>
+     <main>
+        <section id="botones">
+            <h2>Funciones Interactivas</h2>
 
-    <section class="content">
-      <p class="label">Vista previa</p>
-      <div id="texto" class="box">Presiona un botón para ver cambios.</div>
-      <img id="imagenCaballero" src="images/seiya.jpg" alt="Caballero Seiya" class="caballero" />
-    </section>
+            <article id="alertas">
+                <h3>Alertas</h3>
+                <button onclick="showAlert('¡Por Atena!')">Alerta 1</button>
+                <button onclick="showAlert('¡Meteoro de Pegaso!')">Alerta 2</button>
+                <button onclick="showAlert('¡Polvo de Diamantes!')">Alerta 3</button>
+                <button onclick="showAlert('¡Nebulosa de Andrómeda!')">Alerta 4</button>
+                <button onclick="showAlert('¡Ave Fénix!')">Alerta 5</button>
+                <button onclick="showAlert('¡Excalibur!')">Alerta 6</button>
+            </article>
 
-    <section class="extra">
-      <p class="label">Información adicional</p>
-      <div id="extraTexto" class="box">Aquí puedes mostrar datos extra, como historia, poderes o curiosidades.</div>
-    </section>
-  </main>
+            <article id="cambios">
+                <h3>Cambios en la página</h3>
+                <button onclick="cambiarFondo('lightblue')">Fondo Azul</button>
+                <button onclick="cambiarColorTexto('red')">Texto Rojo</button>
+                <button onclick="cambiarTamanoTexto('1.2em')">Texto Grande</button>
+                <button onclick="cambiarFuente('Arial')">Fuente Arial</button>
+            </article>
+
+            <article id="textos">
+                <h3>Cambiar Textos</h3>
+                <h4 id="subtitulo">Subtítulo Original</h4>
+                <p id="parrafo">Este es un párrafo original.</p>
+                <button onclick="cambiarSubtitulo('Nuevo Subtítulo')">Cambiar Subtítulo</button>
+                <button onclick="cambiarParrafo('Nuevo Párrafo')">Cambiar Párrafo</button>
+            </article>
+        </section>
+    </main>
+
        <footer>
            <a href="https://arnoldbgq.github.io/arnoldgonzalez/" target="_blank">Página del Instructor</a>
           <a href="https://github.com/arnoldbgq/arnoldgonzalez" target="_blank">Repositorio del Instructor</a>
