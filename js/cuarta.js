@@ -1,27 +1,29 @@
-function showAlert(mensaje) {
-    alert(mensaje);
-}
+document.addEventListener('DOMContentLoaded', function() {
+    const characterCards = document.querySelectorAll('.character-card');
+    const resetStylesButton = document.getElementById('reset-styles');
+    const showMessageButton = document.getElementById('show-message');
 
-function cambiarFondo(color) {
-    document.body.style.backgroundColor = color;
-}
+    characterCards.forEach(card => {
+        const button = card.querySelector('button');
+        button.addEventListener('click', function() {
+            const color = this.dataset.color;
+            const background = this.dataset.background;
+            const size = this.dataset.size;
 
-function cambiarColorTexto(color) {
-    document.body.style.color = color;
-}
+            document.body.style.color = color;
+            document.body.style.backgroundColor = background;
+            document.body.style.fontSize = size;
+        });
+    });
 
-function cambiarTamanoTexto(tamano) {
-    document.body.style.fontSize = tamano;
-}
+    resetStylesButton.addEventListener('click', function() {
+        document.body.style.color = '';
+        document.body.style.backgroundColor = '';
+        document.body.style.fontSize = '';
+    });
 
-function cambiarFuente(fuente) {
-    document.body.style.fontFamily = fuente;
-}
-
-function cambiarSubtitulo(nuevoSubtitulo) {
-    document.getElementById('subtitulo').innerText = nuevoSubtitulo;
-}
-
-function cambiarParrafo(nuevoParrafo) {
-    document.getElementById('parrafo').innerText = nuevoParrafo;
-}
+    showMessageButton.addEventListener('click', function() {
+        const message = this.dataset.message;
+        alert(message);
+    });
+});

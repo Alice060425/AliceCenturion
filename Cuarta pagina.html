@@ -22,34 +22,40 @@
              <li><a>ENTREGABLE</a></li>
            </ul> 
        </nav>
-     <main>
-        <section id="botones">
-            <h2>Funciones Interactivas</h2>
+     <main class="container">
+        <section class="general-actions">
+            <h2>Acciones Generales</h2>
+            <button id="reset-styles">Resetear Estilos</button>
+            <button id="show-message" data-message="¡El cosmos de todos los caballeros se une!">Mensaje Especial</button>
+        </section>
 
-            <article id="alertas">
-                <h3>Alertas</h3>
-                <button onclick="showAlert('¡Por Atena!')">Alerta 1</button>
-                <button onclick="showAlert('¡Meteoro de Pegaso!')">Alerta 2</button>
-                <button onclick="showAlert('¡Polvo de Diamantes!')">Alerta 3</button>
-                <button onclick="showAlert('¡Nebulosa de Andrómeda!')">Alerta 4</button>
-                <button onclick="showAlert('¡Ave Fénix!')">Alerta 5</button>
-                <button onclick="showAlert('¡Excalibur!')">Alerta 6</button>
+        <section class="characters">
+            <article class="character-card" data-character="seiya">
+                <h2>Seiya (Pegaso)</h2>
+                <img src="images/seiya.jpg" alt="Seiya de Pegaso">
+                <p>Seiya: El caballero de Pegaso, siempre luchando con valor.</p>
+                <button data-color="gold" data-background="darkblue" data-size="1.2em">Activar Estilo de Seiya</button>
             </article>
 
-            <article id="cambios">
-                <h3>Cambios en la página</h3>
-                <button onclick="cambiarFondo('lightblue')">Fondo Azul</button>
-                <button onclick="cambiarColorTexto('red')">Texto Rojo</button>
-                <button onclick="cambiarTamanoTexto('1.2em')">Texto Grande</button>
-                <button onclick="cambiarFuente('Arial')">Fuente Arial</button>
+            <article class="character-card" data-character="shiryu">
+                <h2>Shiryu (Dragón)</h2>
+                <img src="images/siryu.jpg" alt="Shiryu del Dragón">
+                <p>Shiryu: Perseverancia y honor en cada batalla.</p>
+                <button data-color="lightgreen" data-background="darkslategray" data-size="1.1em">Activar Estilo de Shiryu</button>
             </article>
 
-            <article id="textos">
-                <h3>Cambiar Textos</h3>
-                <h4 id="subtitulo">Subtítulo Original</h4>
-                <p id="parrafo">Este es un párrafo original.</p>
-                <button onclick="cambiarSubtitulo('Nuevo Subtítulo')">Cambiar Subtítulo</button>
-                <button onclick="cambiarParrafo('Nuevo Párrafo')">Cambiar Párrafo</button>
+            <article class="character-card" data-character="ikki">
+                <h2>Ikki (Fénix)</h2>
+                <img src="images/ikki.jpg" alt="Ikki del Fénix">
+                <p>Ikki: Renace más fuerte cada vez que cae.</p>
+                <button data-color="red" data-background="black" data-size="1.3em">Activar Estilo de Ikki</button>
+            </article>
+
+            <article class="character-card" data-character="athena">
+                <h2>Athena (Saori)</h2>
+                <img src="images/athena.jpg" alt="Athena Saori Kido">
+                <p>Athena: Protectora de la paz y la justicia.</p>
+                <button data-color="violet" data-background="white" data-size="1.2em">Activar Estilo de Athena</button>
             </article>
         </section>
     </main>
