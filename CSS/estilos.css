@@ -145,37 +145,66 @@ footer{
     padding: 0.5rem;
   }
 }
-
-
-main {
+:root {
+    --bg: #2c2436;
+    --text: #fff;
+}
+.site-header {
+    text-align: center;
     padding: 20px;
 }
 
-#botones {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.container {
+    max-width: 960px;
+    margin: 20px auto;
+    padding: 20px;
 }
 
+.general-actions {
+    margin-bottom: 20px;
+    text-align: center;
+}
 
-
-button {
+.general-actions button {
     padding: 10px 20px;
-    margin: 5px;
+    margin: 0 10px;
     border: none;
-    background-color: #5cb85c;
+    background-color: #4CAF50;
     color: white;
-    border-radius: 5px;
     cursor: pointer;
 }
 
-button:hover {
-    background-color: #449d44;
+.characters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
-footer {
+.character-card {
+    width: 200px;
+    margin: 20px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
     text-align: center;
-    padding: 1em 0;
-    background-color: #555; /* Gris más claro */
-    color: #fff;
+}
+
+.character-card img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.character-card button {
+    padding: 8px 16px;
+    border: none;
+    background-color: #008CBA;
+    color: white;
+    cursor: pointer;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #333;
+    color: white;
 }
