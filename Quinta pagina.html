@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>INICIO</title>
+        <title>participacion</title>
         <link rel="icon" href="images/senati.png">
         <link rel="stylesheet" href="CSS/estilos.css">
     </head>
     <body>
+         <script> alert("Bienvenidos a mi quinta pagina web")   </script>
        <header>
             <img src="images/loscaballeros.jpg" alt="los caballeros del zodiaco" width="300" height="300">
             <h1 > LOS CABALLEROS DEL ZODIACO </h1>
@@ -21,17 +22,20 @@
              <li><a href="personal.html">Pagina Personal</a></li>
              <li><a>ENTREGABLE</a></li>
            </ul> 
-       </nav>
-       <section>
-        <button id="show-message" data-message="¡PAGINA EN construccion!"></button>
-        <article>
-           <img src="images/LCD.jpg" alt="Puno">
-        </article>
+       <h1>Calculadora de Terreno Rectangular</h1>
 
-        <article>
-        </article>
-        <aside> </aside>
-       </section>
+    <label for="largo">Largo (metros):</label>
+    <input type="number" id="largo" placeholder="Ingrese el largo">
+
+    <label for="ancho">Ancho (metros):</label>
+    <input type="number" id="ancho" placeholder="Ingrese el ancho">
+
+    <button id="calcular">Calcular</button>
+
+    <div id="resultados">
+        <p>Área: <span id="area"></span> metros cuadrados</p>
+        <p>Perímetro: <span id="perimetro"></span> metros</p>
+    </div>
        <footer>
            <a href="https://arnoldbgq.github.io/arnoldgonzalez/" target="_blank">Página del Instructor</a>
           <a href="https://github.com/arnoldbgq/arnoldgonzalez" target="_blank">Repositorio del Instructor</a>
@@ -40,6 +44,6 @@
             <a href="https://alice060425.github.io/AliceCenturion/Mi%20Primera%20Pagina.html" target="_blank">Pagina Alice</a>
           <p>2025 - Segundo Semestre - Todo los Derechos Reservados </p>
        </footer>
-       <script src="js/cuarta.js"></script>
+       <script src="js/calculadora.js"></script>
     </body>
 </html>
