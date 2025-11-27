@@ -1,10 +1,19 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const botones = document.querySelectorAll(".add-btn");
+document.addEventListener('DOMContentLoaded', function() {
+    const botonesAñadir = document.querySelectorAll('.btn-primary');
 
-  botones.forEach(boton => {
-    boton.addEventListener("click", () => {
-      const producto = boton.parentElement.querySelector("h3").textContent;
-      alert(`Agregaste ${producto} al carrito 🛒`);
+    botonesAñadir.forEach(boton => {
+        boton.addEventListener('click', function(event) {
+            event.preventDefault();
+            const cardBody = boton.closest('.card-body');
+            const mensaje = document.createElement('p');
+            mensaje.textContent = '¡Añadido al carrito!';
+            mensaje.classList.add('mensaje-carrito'); // Agrega una clase para estilos CSS
+            cardBody.appendChild(mensaje);
+
+            // Eliminar el mensaje después de 2 segundos
+            setTimeout(() => {
+                mensaje.remove();
+            }, 2000);
+        });
     });
-  });
 });
