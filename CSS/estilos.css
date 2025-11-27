@@ -149,11 +149,6 @@ footer{
     --bg: #2c2436;
     --text: #fff;
 }
-.site-header {
-    text-align: center;
-    padding: 20px;
-}
-
 .container {
     max-width: 960px;
     margin: 20px auto;
