@@ -24,52 +24,23 @@
        </nav>
        <main class="panel">
     <div class="btns">
-      <!-- Botones que cambian texto, imagen y estilo -->
-      <button 
-        data-action="caballero" 
-        data-text="Seiya: El caballero de Pegaso, siempre luchando con valor." 
-        data-images="seiya.jpg" 
-        data-color="gold" 
-        data-fondo="darkblue" 
-        data-tamano="1.2em">
-        Mostrar Seiya
-      </button>
-
-      <button 
-        data-action="caballero" 
-        data-text="Shiryu: El Dragón, símbolo de perseverancia y honor." 
-        data-images="siryu.jpg" 
-        data-color="lightgreen" 
-        data-fondo="darkslategray" 
-        data-tamano="1.1em">
-        Mostrar Shiryu
-      </button>
-
-      <button 
-        data-action="caballero" 
-        data-text="Ikki: El Fénix, renace más fuerte cada vez que cae." 
-        data-images="ikki.jpg" 
-        data-color="red" 
-        data-fondo="black" 
-        data-tamano="1.3em">
-        Mostrar Ikki
-      </button>
-
-      <button 
-        data-action="caballero" 
-        data-text="Athena: Saori Kido, protectora de la paz y la justicia." 
-        data-images="athena.jpg" 
-        data-color="violet" 
-        data-fondo="white" 
-        data-tamano="1.2em">
-        Mostrar Athena
-      </button>
+      <button data-action="caballero" data-text="Seiya: El caballero de Pegaso." data-img="images/seiya.jpg" data-color="gold" data-fondo="darkblue" data-tamano="1.2em">Mostrar Seiya</button>
+      <button data-action="caballero" data-text="Shiryu: El Dragón." data-img="images/shiryu.jpg" data-color="lightgreen" data-fondo="darkslategray" data-tamano="1.1em">Mostrar Shiryu</button>
+      <button data-action="caballero" data-text="Ikki: El Fénix." data-img="images/ikki.jpg" data-color="red" data-fondo="black" data-tamano="1.3em">Mostrar Ikki</button>
+      <button data-action="caballero" data-text="Athena: Protectora de la paz." data-img="images/athena.jpg" data-color="violet" data-fondo="white" data-tamano="1.2em">Mostrar Athena</button>
+      <button data-action="reset">Resetear estilos</button>
+      <button data-action="mensaje" data-text="¡El cosmos de todos los caballeros se une!">Mensaje especial</button>
     </div>
 
     <section class="content">
       <p class="label">Vista previa</p>
       <div id="texto" class="box">Presiona un botón para ver cambios.</div>
       <img id="imagenCaballero" src="images/seiya.jpg" alt="Caballero Seiya" class="caballero" />
+    </section>
+
+    <section class="extra">
+      <p class="label">Información adicional</p>
+      <div id="extraTexto" class="box">Aquí puedes mostrar datos extra, como historia, poderes o curiosidades.</div>
     </section>
   </main>
        <footer>
