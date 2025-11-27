@@ -1,58 +1,87 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #DEB887; /* Papel kraft */
-    color: #543829; /* Marrón chocolate oscuro */
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #d9c8a9;
+  color: #3e3e3e;
 }
 
-header {
-    background-color: rgba(222, 184, 135, 0.8); /* Papel kraft semi-transparente */
-    color: #543829;
-    border-bottom: 2px solid #543829;
+.productos {
+  padding: 40px 20px;
+  text-align: center;
 }
 
-footer {
-    background-color: rgba(222, 184, 135, 0.8); /* Papel kraft semi-transparente */
-    color: #543829;
-    border-top: 2px solid #543829;
+.productos h2 {
+  font-size: 2.5em;
+  margin-bottom: 40px;
+  color: #4CAF50;
 }
 
-.producto {
-    margin-bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.7); /* Blanco semi-transparente */
-    border: 1px solid #543829;
-    border-radius: 5px;
+.lista-productos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
 }
 
-.producto img {
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 1px solid #543829;
+.item {
+  position: relative;
+  width: 280px;
+  overflow: hidden;
+  border-radius: 12px;
 }
 
-footer a {
-    color: #543829;
-    text-decoration: none;
+.item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  filter: brightness(95%);
+  transition: transform 0.3s ease;
 }
 
-.btn-primary {
-    background-color: #E07A5F; /* Terracota */
-    border-color: #E07A5F;
-    color: #fff;
+.item:hover img {
+  transform: scale(1.05);
 }
 
-.btn-primary:hover {
-    background-color: #A75D5D; /* Naranja óxido al pasar el ratón */
-    border-color: #A75D5D;
+.info {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-align: left;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    color: #543829;
+.info h3 {
+  margin: 0;
+  font-size: 1.2em;
+  color: #4CAF50;
 }
 
-.mensaje-carrito {
-    color: #E07A5F;
-    font-size: 0.8em;
-    margin-top: 5px;
+.info p {
+  margin: 5px 0;
+  font-size: 1em;
+}
+
+.add-btn {
+  padding: 6px 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.add-btn:hover {
+  background-color: #388E3C;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .lista-productos {
+    flex-direction: column;
+    align-items: center;
+  }
 }
