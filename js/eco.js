@@ -80,7 +80,7 @@
     });
   }
 })();
-(function () {
+/*(function () {
   const searchInput = document.getElementById('searchInput');
   const filterSelect = document.getElementById('filterSelect');
   const cards = document.querySelectorAll('.product-card');
@@ -99,4 +99,4 @@
 
   if (searchInput) searchInput.addEventListener('input', applyFilters);
   if (filterSelect) filterSelect.addEventListener('change', applyFilters);
-})();
+})();*/
