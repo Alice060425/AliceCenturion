@@ -1,58 +1,66 @@
+b:root {
+  --color-primary: #2A9D8F;   /* Tema verde fresco */
+  --color-secondary: #E9C46A;
+  --color-text: #264653;
+  --color-bg: #F7FAF9;
+  --color-white: #FFFFFF;
+  --color-accent: #F4A261;
+}
+
+/* Tema alternativo: tierra cálida */
+[data-theme="tierra"] {
+  --color-primary: #8E6B3A;
+  --color-secondary: #D9A86C;
+  --color-text: #3B3B3B;
+  --color-bg: #FAF6EE;
+  --color-white: #FFFFFF;
+  --color-accent: #B85C38;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #DEB887; /* Papel kraft */
-    color: #543829; /* Marrón chocolate oscuro */
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Poppins, sans-serif;
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.6;
 }
 
-header {
-    background-color: rgba(222, 184, 135, 0.8); /* Papel kraft semi-transparente */
-    color: #543829;
-    border-bottom: 2px solid #543829;
-}
+/* Header */
+.brand-text { font-weight: 700; color: var(--color-primary); }
+.navbar { border-bottom: 1px solid rgba(0,0,0,.06); }
 
-footer {
-    background-color: rgba(222, 184, 135, 0.8); /* Papel kraft semi-transparente */
-    color: #543829;
-    border-top: 2px solid #543829;
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, var(--color-bg), #E4F5EB);
+  padding: 2.5rem 0;
 }
+.hero h1 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
+.hero p { color: #4c5966; }
 
-.producto {
-    margin-bottom: 20px;
-    background-color: rgba(255, 255, 255, 0.7); /* Blanco semi-transparente */
-    border: 1px solid #543829;
-    border-radius: 5px;
-}
+/* Cards de producto */
+.product-card { border: 1px solid rgba(0,0,0,.06); transition: transform .08s ease, box-shadow .2s ease; }
+.product-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.06); }
+.product-card img { height: 180px; object-fit: cover; width: 100%; display: block; }
+.price { font-weight: 700; color: var(--color-primary); }
+.price s { color: #777; margin-right: .4rem; }
+.badge-offer { background: var(--color-accent); color: var(--color-white); }
 
-.producto img {
-    height: 200px;
-    object-fit: cover;
-    border-bottom: 1px solid #543829;
-}
+/* Botones */
+.btn-primary { background-color: var(--color-primary); border-color: var(--color-primary); }
+.btn-outline-primary { color: var(--color-primary); border-color: var(--color-primary); }
+.btn-primary:hover { background-color: #22857C; border-color: #22857C; }
+.btn-outline-primary:hover { color: var(--color-white); background-color: var(--color-primary); }
 
-footer a {
-    color: #543829;
-    text-decoration: none;
-}
+/* Footer */
+.site-footer { border-top: 1px solid rgba(0,0,0,.06); background: var(--color-white); }
+.site-footer h5 { color: var(--color-primary); }
 
-.btn-primary {
-    background-color: #E07A5F; /* Terracota */
-    border-color: #E07A5F;
-    color: #fff;
-}
+/* Utilidades */
+.star { color: #F6B73C; letter-spacing: .06em; }
+.kg { color: #6b7785; }
 
-.btn-primary:hover {
-    background-color: #A75D5D; /* Naranja óxido al pasar el ratón */
-    border-color: #A75D5D;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    color: #543829;
-}
-
-.mensaje-carrito {
-    color: #E07A5F;
-    font-size: 0.8em;
-    margin-top: 5px;
-}
+/* Accesibilidad y media */
+:focus-visible { outline: 3px solid var(--color-secondary); outline-offset: 2px; }
+img { max-width: 100%; height: auto; display: block; }
