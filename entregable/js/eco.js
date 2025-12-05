@@ -1,4 +1,4 @@
-// Carrito simple
+// Carrito en memoria (sesión simple)
 let cart = [];
 
 function addToCart(id, name, price) {
@@ -17,33 +17,75 @@ function updateCartCount() {
   if (cartCount) cartCount.textContent = count;
 }
 
-// Render carrito
+// Render tabla del carrito con acciones
 function renderCart() {
   let body = document.getElementById("cartBody");
   if (!body) return;
   body.innerHTML = "";
   let total = 0;
+
   cart.forEach(item => {
     let subtotal = item.price * item.qty;
     total += subtotal;
+
     let row = document.createElement("tr");
     row.innerHTML = `
       <td>${item.name}</td>
-      <td>${item.qty}</td>
+      <td>
+        <div class="input-group input-group-sm">
+          <button class="btn btn-outline-primary" type="button">-</button>
+          <input type="text" class="form-control text-center" value="${item.qty}" aria-label="Cantidad">
+          <button class="btn btn-outline-primary" type="button">+</button>
+        </div>
+      </td>
       <td>S/.${item.price.toFixed(2)}</td>
       <td>S/.${subtotal.toFixed(2)}</td>
+      <td>
+        <button class="btn btn-outline-primary btn-sm">Quitar</button>
+      </td>
     `;
+    let minusBtn = row.querySelectorAll("button")[0];
+    let plusBtn = row.querySelectorAll("button")[1];
+    let removeBtn = row.querySelectorAll("button")[2];
+    let qtyInput = row.querySelector("input");
+
+    minusBtn.addEventListener("click", () => {
+      if (item.qty > 1) item.qty -= 1;
+      qtyInput.value = item.qty;
+      renderCart(); updateCartCount();
+    });
+    plusBtn.addEventListener("click", () => {
+      item.qty += 1;
+      qtyInput.value = item.qty;
+      renderCart(); updateCartCount();
+    });
+    removeBtn.addEventListener("click", () => {
+      cart = cart.filter(p => p.id !== item.id);
+      renderCart(); updateCartCount();
+    });
+
     body.appendChild(row);
   });
+
   let totalCell = document.getElementById("cartTotal");
   if (totalCell) totalCell.textContent = "S/." + total.toFixed(2);
 }
 
-// Checkout simulado
+// Botones del carrito
 let checkoutBtn = document.getElementById("checkoutBtn");
 if (checkoutBtn) {
   checkoutBtn.addEventListener("click", () => {
+    if (cart.length === 0) { alert("Tu carrito está vacío."); return; }
     alert("Gracias por tu compra (simulado).");
+    cart = [];
+    updateCartCount();
+    renderCart();
+  });
+}
+
+let clearBtn = document.getElementById("clearBtn");
+if (clearBtn) {
+  clearBtn.addEventListener("click", () => {
     cart = [];
     updateCartCount();
     renderCart();
@@ -85,10 +127,8 @@ if (reclamoForm) {
   });
 }
 
-// Tema
-let themeToggle = document.getElementById("themeToggle");
-if (themeToggle) {
-  themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("theme-tierra");
-  });
-}
+// Render inicial del carrito cuando la página tiene tabla
+document.addEventListener("DOMContentLoaded", () => {
+  renderCart();
+  updateCartCount();
+});

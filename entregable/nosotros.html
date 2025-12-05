@@ -7,21 +7,34 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/eco.css" />
 </head>
-<body>
-  <header class="navbar navbar-expand-lg bg-white">
+<body class="theme-warm">
+  <header class="navbar navbar-expand-lg bg-white shadow-sm">
     <div class="container">
-      <a class="navbar-brand" href="EcoMarket.html">EcoMarket</a>
+      <a class="navbar-brand d-flex align-items-center gap-2" href="EcoMarket.html">
+        <img src="branding/logo-ecomarket-warm.svg" alt="EcoMarket" style="height:32px;width:auto;">
+        <span class="brand-text">EcoMarket</span>
+      </a>
     </div>
   </header>
 
   <main class="container py-4">
     <h1>Sobre EcoMarket</h1>
-    <p>Trabajamos con productores locales para acercar alimentos reales del campo a tu mesa.</p>
-    <img src="img/nosotros.jpg" alt="Equipo EcoMarket" class="w-100 rounded">
+    <p>Conectamos productores locales con familias que buscan alimentos reales del campo a su mesa.</p>
+    <div class="row g-3">
+      <div class="col-md-6"><img src="img/nosotros.jpg" alt="Equipo" class="w-100 rounded shadow-sm"></div>
+      <div class="col-md-6">
+        <ul>
+          <li>Compras justas y transparentes</li>
+          <li>Productos de temporada</li>
+          <li>Compromiso con la comunidad</li>
+        </ul>
+      </div>
+    </div>
   </main>
 
-  <footer class="site-footer py-4 text-center">
-    <p>© EcoMarket 2025</p>
+  <footer class="site-footer py-5">
+    <!-- mismo footer -->
+    <div class="container">...</div>
   </footer>
 </body>
 </html>
