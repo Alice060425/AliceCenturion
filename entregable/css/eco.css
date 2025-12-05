@@ -1,66 +1,36 @@
-b:root {
-  --color-primary: #2A9D8F;   /* Tema verde fresco */
-  --color-secondary: #E9C46A;
-  --color-text: #264653;
-  --color-bg: #E4F5EB;
-  --color-white: #FFFFFF;
-  --color-accent: #F4A261;
-}
-
-/* Tema alternativo: tierra cálida */
-[data-theme="tierra"] {
-  --color-primary: #8E6B3A;
-  --color-secondary: #D9A86C;
-  --color-text: #3B3B3B;
-  --color-bg: #FAF6EE;
-  --color-white: #FFFFFF;
-  --color-accent: #B85C38;
-}
-
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
 body {
-  margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Poppins, sans-serif;
-  color: var(--color-text);
-  background: var(--color-bg);
-  line-height: 1.6;
+  font-family: Arial, sans-serif;
+  background-color: #F7FAF9;
+  color: #264653;
 }
 
-/* Header */
-.brand-text { font-weight: 700; color: var(--color-primary); }
-.navbar { border-bottom: 1px solid rgba(0,0,0,.06); }
-
-/* Hero */
 .hero {
-  background: linear-gradient(135deg, var(--color-bg), #E4F5EB);
-  padding: 2.5rem 0;
+  background-color: #E4F5EB;
 }
-.hero h1 { font-size: clamp(1.6rem, 3.5vw, 2.4rem); }
-.hero p { color: #4c5966; }
 
-/* Cards de producto */
-.product-card { border: 1px solid rgba(0,0,0,.06); transition: transform .08s ease, box-shadow .2s ease; }
-.product-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.06); }
-.product-card img { height: 180px; object-fit: cover; width: 100%; display: block; }
-.price { font-weight: 700; color: var(--color-primary); }
-.price s { color: #777; margin-right: .4rem; }
-.badge-offer { background: var(--color-accent); color: var(--color-white); }
+.brand-text {
+  font-weight: bold;
+  color: #2A9D8F;
+}
 
-/* Botones */
-.btn-primary { background-color: var(--color-primary); border-color: var(--color-primary); }
-.btn-outline-primary { color: var(--color-primary); border-color: var(--color-primary); }
-.btn-primary:hover { background-color: #22857C; border-color: #22857C; }
-.btn-outline-primary:hover { color: var(--color-white); background-color: var(--color-primary); }
+.card {
+  border: 1px solid #ddd;
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
 
-/* Footer */
-.site-footer { border-top: 1px solid rgba(0,0,0,.06); background: var(--color-white); }
-.site-footer h5 { color: var(--color-primary); }
+.btn-primary {
+  background-color: #2A9D8F;
+  border: none;
+}
+.btn-primary:hover {
+  background-color: #22857C;
+}
 
-/* Utilidades */
-.star { color: #F6B73C; letter-spacing: .06em; }
-.kg { color: #6b7785; }
-
-/* Accesibilidad y media */
-:focus-visible { outline: 3px solid var(--color-secondary); outline-offset: 2px; }
-img { max-width: 100%; height: auto; display: block; }
+.site-footer {
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+}

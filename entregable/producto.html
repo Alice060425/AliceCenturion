@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Producto – EcoMarket</title>
-  <link rel="icon" href="branding/logo-ecomarket.svg" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/eco.css" />
 </head>
@@ -12,16 +11,11 @@
   <header class="navbar navbar-expand-lg bg-white">
     <div class="container">
       <a class="navbar-brand d-flex align-items-center" href="EcoMarket.html">
-        <img src="branding/logo-ecomarket.svg" alt="Logo EcoMarket" class="me-2" style="height:36px;width:auto;" />
+        <img src="branding/logo-ecomarket.svg" alt="Logo EcoMarket" style="height:36px;width:auto;" />
         <span class="brand-text">EcoMarket</span>
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
-          <li class="nav-item"><a class="nav-link" href="carrito.html">🛒 <span class="cart-count badge bg-primary">0</span></a></li>
-        </ul>
-        <button id="themeToggle" class="btn btn-outline-primary ms-lg-3">Tema: Verde fresco</button>
+      <div class="ms-auto">
+        <a class="nav-link" href="carrito.html">🛒 <span id="cartCount">0</span></a>
       </div>
     </div>
   </header>
@@ -29,15 +23,14 @@
   <main class="container py-4">
     <div class="row g-4">
       <div class="col-md-6">
-        <img id="prodImg" src="img/default.jpg" class="w-100 rounded" alt="Producto" />
+        <img id="prodImg" src="img/default.jpg" alt="Producto" class="w-100 rounded" />
       </div>
       <div class="col-md-6">
         <h1 id="prodName">Producto</h1>
-        <p class="star" aria-label="5 de 5 estrellas">★★★★★</p>
-        <p class="lead">Precio: <span id="prodPrice" class="price">S/.0.00</span></p>
+        <p class="lead">Precio: <span id="prodPrice">S/.0.00</span></p>
         <p id="prodDesc">Descripción breve del producto destacando su frescura, origen y beneficios.</p>
         <div class="d-flex gap-2">
-          <button id="addBtn" class="btn btn-primary">Añadir</button>
+          <button id="addBtn" class="btn btn-primary">Añadir al carrito</button>
           <a href="tienda.html" class="btn btn-outline-primary">Volver a tienda</a>
         </div>
       </div>
@@ -45,27 +38,64 @@
   </main>
 
   <script>
-    const params = new URLSearchParams(location.search);
-    const id = params.get('id') || 'brocoli';
-    const db = {
-      brocoli: { name: 'Brócoli', price: 8, img: 'img/brocoli.jpg', description: 'Brócoli fresco, rico en vitaminas y fibra.' },
-      tomate: { name: 'Tomate', price: 4.5, img: 'img/tomate.jpg', description: 'Tomate orgánico de sabor intenso y natural.' },
-      cebolla: { name: 'Cebolla', price: 5, img: 'img/cebolla.jpg', description: 'Cebolla seleccionada, ideal para tus recetas.' },
-      zapallo: { name: 'Zapallo', price: 2, img: 'img/zapallo.jpg', description: 'Zapallo dulce y versátil, perfecto para sopas.' }
-    };
-    const prod = db[id] || db.brocoli;
-    document.getElementById('prodName').textContent = prod.name;
-    document.getElementById('prodPrice').textContent = `S/.${prod.price.toFixed(2)}`;
-    document.getElementById('prodImg').src = prod.img;
-    document.getElementById('prodDesc').textContent = prod.description;
+    // Obtener el id desde la URL
+    var params = new URLSearchParams(window.location.search);
+    var id = params.get('id');
 
-    const addBtn = document.getElementById('addBtn');
-    addBtn.setAttribute('data-add', '');
-    addBtn.setAttribute('data-id', id);
-    addBtn.setAttribute('data-name', prod.name);
-    addBtn.setAttribute('data-price', prod.price);
+    // Variables del producto (sin objetos ni JSON)
+    var name = 'Producto';
+    var price = 0;
+    var img = 'img/default.jpg';
+    var desc = 'Descripción breve del producto destacando su frescura, origen y beneficios.';
+
+    // Asignar datos según el id (if/else clásico)
+    if (id === 'brocoli') {
+      name = 'Brócoli';
+      price = 8;
+      img = 'img/brocoli.jpg';
+      desc = 'Brócoli fresco, rico en vitaminas y fibra.';
+    } else if (id === 'tomate') {
+      name = 'Tomate';
+      price = 4.5;
+      img = 'img/tomate.jpg';
+      desc = 'Tomate orgánico de sabor intenso y natural.';
+    } else if (id === 'cebolla') {
+      name = 'Cebolla';
+      price = 5;
+      img = 'img/cebolla.jpg';
+      desc = 'Cebolla seleccionada, ideal para tus recetas diarias.';
+    } else if (id === 'zapallo') {
+      name = 'Zapallo';
+      price = 2;
+      img = 'img/zapallo.jpg';
+      desc = 'Zapallo dulce y versátil, perfecto para sopas y purés.';
+    } else {
+      // Valor por defecto si no hay id válido
+      id = 'brocoli';
+      name = 'Brócoli';
+      price = 8;
+      img = 'img/brocoli.jpg';
+      desc = 'Brócoli fresco, rico en vitaminas y fibra.';
+    }
+
+    // Pintar en el DOM
+    document.getElementById('prodName').textContent = name;
+    document.getElementById('prodPrice').textContent = 'S/.' + price.toFixed(2);
+    document.getElementById('prodImg').src = img;
+    document.getElementById('prodDesc').textContent = desc;
+
+    // Conectar el botón "Añadir" con la función global addToCart de app.js
+    document.getElementById('addBtn').addEventListener('click', function () {
+      // Usa la función global definida en js/app.js
+      if (typeof addToCart === 'function') {
+        addToCart(id, name, price);
+        alert(name + ' añadido al carrito');
+      } else {
+        alert('Función de carrito no disponible.');
+      }
+    });
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
   <script src="js/eco.js"></script>
 </body>
 </html>

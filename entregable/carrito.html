@@ -4,24 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Carrito – EcoMarket</title>
-  <link rel="icon" href="branding/logo-ecomarket.svg" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="css/eco.css" />
 </head>
 <body>
   <header class="navbar navbar-expand-lg bg-white">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="EcoMarket.html">
-        <img src="branding/logo-ecomarket.svg" alt="Logo EcoMarket" class="me-2" style="height:36px;width:auto;" />
-        <span class="brand-text">EcoMarket</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
-        </ul>
-        <button id="themeToggle" class="btn btn-outline-primary ms-lg-3">Tema: Verde fresco</button>
-      </div>
+      <a class="navbar-brand" href="EcoMarket.html">EcoMarket</a>
     </div>
   </header>
 
@@ -50,55 +39,7 @@
     </div>
   </main>
 
-  <script>
-    const CART_KEY = 'eco_cart';
-    function getCart() { return JSON.parse(localStorage.getItem(CART_KEY) || '[]'); }
-    function setCart(cart) { localStorage.setItem(CART_KEY, JSON.stringify(cart)); }
-    function renderCart() {
-      const cart = getCart();
-      const body = document.getElementById('cartBody');
-      body.innerHTML = '';
-      let total = 0;
-      cart.forEach(item => {
-        const subtotal = item.price * item.qty;
-        total += subtotal;
-        const tr = document.createElement('tr');
-        tr.innerHTML = `
-          <td>${item.name}</td>
-          <td>
-            <div class="input-group input-group-sm" style="max-width:120px;">
-              <button class="btn btn-outline-secondary" data-minus="${item.id}">-</button>
-              <input class="form-control text-center" value="${item.qty}" readonly />
-              <button class="btn btn-outline-secondary" data-plus="${item.id}">+</button>
-            </div>
-          </td>
-          <td>S/.${item.price.toFixed(2)}</td>
-          <td>S/.${subtotal.toFixed(2)}</td>
-        `;
-        body.appendChild(tr);
-      });
-      document.getElementById('cartTotal').textContent = `S/.${total.toFixed(2)}`;
-
-      body.querySelectorAll('[data-minus]').forEach(btn => btn.addEventListener('click', () => qtyChange(btn.getAttribute('data-minus'), -1)));
-      body.querySelectorAll('[data-plus]').forEach(btn => btn.addEventListener('click', () => qtyChange(btn.getAttribute('data-plus'), +1)));
-    }
-    function qtyChange(id, delta) {
-      const cart = getCart();
-      const idx = cart.findIndex(i => i.id === id);
-      if (idx >= 0) {
-        cart[idx].qty = Math.max(1, cart[idx].qty + delta);
-        setCart(cart);
-        renderCart();
-      }
-    }
-    renderCart();
-
-    document.getElementById('checkoutBtn').addEventListener('click', () => {
-      alert('Gracias por tu compra (flujo simulado).');
-      localStorage.removeItem(CART_KEY);
-      renderCart();
-    });
-  </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/eco.js"></script>
 </body>
 </html>
+
