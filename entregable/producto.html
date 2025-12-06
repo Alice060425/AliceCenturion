@@ -104,16 +104,16 @@
     var id = params.get('id');
     var name = 'Producto', price = 0, img = 'img/default.jpg', desc = 'Descripción breve.';
 
-    if (id === 'brocoli') { name='Brócoli'; price=8; img='ecoimages/brocolito.png'; desc='Brócoli fresco, rico en vitaminas y fibra.'; }
-    else if (id === 'tomate') { name='Tomate'; price=4.5; img='img/tomate.jpg'; desc='Tomate orgánico de sabor intenso y natural.'; }
-    else if (id === 'cebolla') { name='Cebolla'; price=5; img='img/cebolla.jpg'; desc='Cebolla seleccionada para tus recetas.'; }
-    else if (id === 'zapallo') { name='Zapallo'; price=2; img='img/zapallo.jpg'; desc='Zapallo dulce y versátil.'; }
-    else if (id === 'quinua') { name='Quinua'; price=14; img='img/quinua.jpg'; desc='Quinua real, proteína de alto valor.'; }
-    else if (id === 'lechuga') { name='Lechuga'; price=3; img='img/lechuga.jpg'; desc='Lechuga fresca y crujiente.'; }
-    else if (id === 'papa') { name='Papa'; price=3.5; img='img/papa.jpg'; desc='Papa andina, versátil y nutritiva.'; }
-    else if (id === 'zanahoria') { name='Zanahoria'; price=3; img='img/zanahoria.jpg'; desc='Zanahoria dulce, ideal para ensaladas.'; }
-    else if (id === 'arvejas') { name='Arvejas'; price=7; img='img/arvejas.jpg'; desc='Arvejas tiernas y sabrosas.'; }
-    else { id='brocoli'; name='Brócoli'; price=8; img='img/brocoli.jpg'; desc='Brócoli fresco, rico en vitaminas y fibra.'; }
+    if (id === 'brocoli') { name='Brócoli'; price=8; img='ecoimages/brocolito.png'; style='height:400px;width:309px'; desc='Brócoli fresco, rico en vitaminas y fibra.'; }
+    else if (id === 'tomate') { name='Tomate'; price=4.5; img='ecoimage/tomate.png'; desc='Tomate orgánico de sabor intenso y natural.'; }
+    else if (id === 'cebolla') { name='Cebolla'; price=5; img='ecoimages/cebollita.jpg'; desc='Cebolla seleccionada para tus recetas.'; }
+    else if (id === 'zapallo') { name='Zapallo'; price=2; img='ecoimages/zapallito.jpg'; desc='Zapallo dulce y versátil.'; }
+    else if (id === 'quinua') { name='Quinua'; price=14; img='ecoimages/quinua.jpg'; desc='Quinua real, proteína de alto valor.'; }
+    else if (id === 'lechuga') { name='Lechuga'; price=3; img='ecoimages/lechuga.jpg'; desc='Lechuga fresca y crujiente.'; }
+    else if (id === 'papa') { name='Papa'; price=3.5; img='ecoimages/papa.jpg'; desc='Papa andina, versátil y nutritiva.'; }
+    else if (id === 'zanahoria') { name='Zanahoria'; price=3; img='ecoimages/zani.jpg'; desc='Zanahoria dulce, ideal para ensaladas.'; }
+    else if (id === 'arvejas') { name='Arvejas'; price=7; img='ecoimages/arvejas.jpg'; desc='Arvejas tiernas y sabrosas.'; }
+    else { id='brocoli'; name='Brócoli'; price=8; img='ecoimages/brocolito.jpg'; desc='Brócoli fresco, rico en vitaminas y fibra.'; }
 
     document.getElementById('prodName').textContent = name;
     document.getElementById('prodPrice').textContent = 'S/.' + price.toFixed(2);
